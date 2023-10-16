@@ -23,8 +23,17 @@ def reg_multi():
 
     print(total)
 
+@exec
 def fail():
-    print("run")
+    raise ValueError("failed")
+
+def recursive(a):
+    print("a is {}".format(a))
+    time.sleep(1)
+    if a < 10:
+        a += 1
+        recursive(a)
 
 if __name__ == '__main__':
-    exec_interval(fail, 5)
+    x = 0
+    recursive(x)
